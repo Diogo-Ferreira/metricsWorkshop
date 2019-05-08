@@ -25,7 +25,6 @@ function statsd (path) {
   };
 }
 
-
 app.post('/temperature', statsd('workshop'), (req, res) => {
   sdc.increment('numberOfRequests');
   const shouldICrash = chance.bool({ likelihood: 40 });
