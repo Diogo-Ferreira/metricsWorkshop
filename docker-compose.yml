@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  graphite:
+    image: graphiteapp/graphite-statsd
+    ports:
+      - 3011:80
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3010:3000
+    links:
+      - graphite
+  server:
+    image: node:11
+    volumes:
+      - ./:/app
+    command: "npm start"
+    working_dir: '/app'
+    links:
+      - graphite
+  sensor:
+    image: node:11
+    volumes:
+      - ./:/app
+    working_dir: '/app'
+    command: "npm run sensor"
+    links:
+      - server
