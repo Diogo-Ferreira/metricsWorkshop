@@ -17,6 +17,12 @@ Check on your browser: http://localhost:3010 .
 user: admin
 pwd: admin
 
+Install server and sensor dependencies:
+
+```
+docker run -v $(pwd):/app node:11 bash -c "cd app && npm install"
+```
+
 Start your server and temperature sensor:
 
 ```
