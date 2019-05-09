@@ -26,6 +26,7 @@ function statsd (path) {
 }
 
 app.post('/temperature', statsd('workshop'), (req, res) => {
+  /** We want to *count* the number of requests in a period of time */
   sdc.increment('numberOfRequests');
   const shouldICrash = chance.bool({ likelihood: 40 });
 
@@ -34,6 +35,8 @@ app.post('/temperature', statsd('workshop'), (req, res) => {
     res.end();
     return;
   }
+
+  /** We want to *save the value* of a paramater through time */
   sdc.gauge('temperature', req.body.temperature);
   console.log(req.body.temperature)
   res.status(201);
