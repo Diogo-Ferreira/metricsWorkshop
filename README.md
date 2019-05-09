@@ -1,10 +1,8 @@
 # metricsWorkshop
 
-## Secnario
+We have a temperature sensor in a room that records the temperature and sends it to a server. We want to monitor the temperature and server stats.
 
-We have a temperature sensor in a room that records temp in a server. We want to monitor the temperature and server stats.
-
-## Instructions
+# Instructions
 
 Start graphite and grafana
 
