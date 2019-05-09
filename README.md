@@ -1,5 +1,11 @@
 # metricsWorkshop
 
+## Secnario
+
+We have a temperature sensor in a room that records temp in a server. We want to monitor the temperature and server stats.
+
+## Instructions
+
 Start graphite and grafana
 
 ```
@@ -25,7 +31,10 @@ docker-compose stop sensor server && docker-compose up -d sensor server
 
 # First step
 
-Create a simple temperateur graph.
+1. Create a simple temperature graph.
+2. Create the responses code graph
+3. Create the others graph that you see on the screenshot, start by your favorite
+4. play with the sensor paramaters
 
 # Goal
 
